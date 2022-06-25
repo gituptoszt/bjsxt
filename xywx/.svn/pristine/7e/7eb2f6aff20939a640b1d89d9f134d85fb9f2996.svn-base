@@ -1,0 +1,116 @@
+package com.action.back;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.entity.Admin;
+import com.entity.Article;
+import com.entity.Link;
+import com.entity.Notice;
+import com.entity.Type;
+import com.entity.Type2;
+import com.google.gson.Gson;
+import com.service.AdminService;
+import com.service.ArticleService;
+import com.service.LinkService;
+import com.service.NoticeService;
+import com.service.Type2Service;
+import com.service.TypeService;
+
+@Controller
+@RequestMapping("/pc")
+public class PcAction { 
+	
+	@Autowired 
+	 private AdminService adminService;
+	 @Autowired 
+	 private NoticeService noticeService;
+	 @Autowired 
+	 private ArticleService articleService;
+	 @Autowired 
+	 private LinkService linkService;
+	 @Autowired 
+	 private TypeService typeService;
+	 @Autowired 
+	 private Type2Service type2Service;
+	/**
+	 *测试pc页面top公共部分
+	 * @param request
+	 * @param modelmap
+	 * @return
+	 */
+	@RequestMapping("pcPageTop.html")
+	public ModelAndView pcPageTop(HttpServletRequest request, ModelMap modelmap) {
+		return new ModelAndView("pc/pcPageTop");
+	}
+	
+	
+	
+	
+	/**
+	 *测试pc页面tfooter公共部分(包括友情链接)
+	 * @param request
+	 * @param modelmap
+	 * @return
+	 */
+	@RequestMapping("pcPageFooter.html")
+	public ModelAndView pcPageFooter(HttpServletRequest request, ModelMap modelmap) {
+		/*Admin adminSession=(Admin) request.getSession().getAttribute("adminSession");
+		modelmap.put("adminSession", adminSession);*/
+		return new ModelAndView("pc/pcPageFooter");
+	}
+	/**
+	 *主页(将公共页面导入后的主页)
+	 * @param request
+	 * @param modelmap
+	 * @return
+	 */
+	@RequestMapping("pcIndex.html")
+	public ModelAndView pcIndex(HttpServletRequest request, ModelMap modelmap) {
+		//从数据库取一级类型数据,放到导航栏
+		Type type=new Type();
+		List<Type> typeList=typeService.selectAll(type);
+		modelmap.put("typeList", typeList);
+		//从数据库取二级类型数据,放到导航栏中一级类型下
+		Type2 type2=new Type2();
+		List<Type2> type2List=type2Service.selectAll(type2);
+		modelmap.put("type2List", type2List);
+		
+		//从数据库中取出所有链接放到友情链接
+		Link link=new Link();
+		List<Link> linkList=linkService.selectAll(link);
+		modelmap.put("linkList", linkList);
+		
+		//从数据库中取出公告方法公告栏
+		Notice notice=new Notice();
+		List<Notice> noticeList=noticeService.selectAll(notice);
+		modelmap.put("noticeList", noticeList);
+		
+		return new ModelAndView("pc/pcIndex");
+	}
+
+	/**
+	 * 404
+	 * 
+	 * @return
+	 */
+	@RequestMapping("404.html")
+	public ModelAndView error(HttpServletRequest request, ModelMap modelmap) {
+
+		modelmap.put("", "");
+		return new ModelAndView("back/404");
+	}
+
+	
+}

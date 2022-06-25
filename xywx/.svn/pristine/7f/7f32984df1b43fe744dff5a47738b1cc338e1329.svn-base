@@ -1,0 +1,53 @@
+[{
+	"title" : "后台首页",
+	"icon" : "icon-computer",
+	"href" : "home.html",  
+	"spread" : false
+},{
+	"title" : "文章列表",
+	"icon" : "icon-text",
+	"href" : "articleListShow.html", 
+	"spread" : false
+},{
+	"title" : "文章类型",
+	"icon" : "icon-text",
+	"href" : "typeListShow.html", 
+	"spread" : false
+}
+,{
+	"title" : "学校公告",
+	"icon" : "icon-text",
+	"href" : "noticeListShow.html", 
+	"spread" : false
+},{
+	"title" : "用户管理",
+	"icon" : "&#xe630;",
+	"href" : "",
+	"spread" : false,
+	"children" : [
+		{
+			"title" : "用户列表",
+			"icon" : "&#xe61c;",
+			"href" : "allUsers.html",
+			"spread" : false
+		} ,
+		{
+			"title" : "修改密码",
+			"icon" : "&#xe61c;",
+			"href" : "changePwd.html",
+			"spread" : false
+		} 
+		,
+		{
+			"title" : "用户信息",
+			"icon" : "&#xe61c;",
+			"href" : "userInfo.html",
+			"spread" : false
+		} 
+]
+},{
+	"title" : "友情链接",
+	"icon" : "&#xe64c;",
+	"href" : "linkListShow.html",
+	"spread" : false
+}]

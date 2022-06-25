@@ -1,0 +1,53 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html,body{
+    font-family: '微软雅黑', '楷体','Microsoft YaHei';
+    line-height:22px;
+    font-size:12px;
+    color:#606060;
+    margin: auto;
+}
+.detail_sum{
+    min-width: 1200px;
+    margin: auto;
+}
+.detail_model{
+    width: 1000px;
+    margin: auto;
+}
+/*头部样式*/
+.detail_title{
+    width: 1000px;
+    height:100px;
+    line-height: 50px;
+    margin-top: 20px;
+}
+.title_title{
+    text-align: center;
+    border-bottom: solid 1px rgb(232,232,232);
+}
+.title_right{
+    text-align: left;
+}
+.title_right a{
+    text-decoration: none;
+    color: #606060;
+}
+.title_right a:hover{
+    text-decoration: underline;
+    color: indianred;
+}
+/*内容样式*/
+.detail_content{
+    width: 800px;
+    margin: auto;
+}
+
+
+
+
+
+
+

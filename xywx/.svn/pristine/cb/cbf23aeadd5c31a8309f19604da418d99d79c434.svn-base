@@ -1,0 +1,108 @@
+layui.config({
+	base : "js/"
+}).use(['form','layer','jquery','layedit','laydate'],function(){
+	var form = layui.form(),
+		layer = parent.layer === undefined ? layui.layer : parent.layer,
+		laypage = layui.laypage,
+		layedit = layui.layedit,
+		laydate = layui.laydate,
+		$ = layui.jquery;
+ 	
+	
+	//这一段是将图片显示在页面
+	var url = "imgLoad.html?path="+$("#userFace").attr("src");   
+    var xhr = new XMLHttpRequest();  
+    xhr.open('GET', url, true);  
+    xhr.responseType = "blob";  
+    xhr.onload = function () {  
+        if (this.status == 200) {  
+            var blob = this.response;  
+            var img = document.createElement("img");  
+            img.onload = function (e) {  
+                window.URL.revokeObjectURL(img.src);  
+            };  
+            img.src = window.URL.createObjectURL(blob);  
+            $("#userFace").attr("src",img.src);    
+        }  
+    };  
+    xhr.send();
+    
+    
+	
+ 	layedit.set({  //layedit.set一定要放在build前面,否则配置全局接口无效
+ 		uploadImage:{
+ 			url:"imgUpload.html", //上传接口url
+ 			type:"post",//默认post
+ 			beforeSend : function() {
+				top.layer.msg('图片上传中，请稍候',{
+					icon: 16,
+					time:false,
+					shade:0.8
+				});
+			},
+			success : function(ret) {
+				 setTimeout(function(){
+					 res=eval(res);  
+						$("#userImg").val(res.data.src); 
+						var url = "imgLoad.html?path="+res.data.src;  
+					    var xhr = new XMLHttpRequest();  
+					    xhr.open('GET', url, true);  
+					    xhr.responseType = "blob";  
+					    xhr.onload = function () {  
+					        if (this.status == 200) {  
+					            var blob = this.response;  
+					            var img = document.createElement("img");  
+					            img.onload = function (e) {  
+					                window.URL.revokeObjectURL(img.src);  
+					            };  
+					            img.src = window.URL.createObjectURL(blob);  
+					            $("#userFace").attr("src",img.src);    
+					        }  
+					    };  
+					    xhr.send();
+					    top.layer.closeAll(); //关闭loading
+				 },1000);   
+			}, 
+			error : function(res) {
+				top.layer.closeAll(); //关闭loading
+			}
+ 		}
+ 	});
+ 	
+ 	//创建一个编辑器,
+ 	var editIndex = layedit.build('news_content');
+ 	
+ 	
+ 	form.on("submit(worksAdd)",function(data){
+ 		//获取上传的公告标题,时间,以及文本编辑器的内容
+ 		var title=$.trim($(".newsName").val());
+ 		var newsTime=$.trim($(".newsTime").val());
+ 		//获取编辑器的内容(不是纯文本)
+ 		var txt=layedit.getContent(editIndex);
+ 		
+ 		$.ajax({ 
+			type : "post",
+			url : "noticeAdd.html",
+			data :{
+				title:title,
+				set_time:newsTime,
+				txt:txt,
+				
+			},
+			dataType : 'json',
+			beforeSend : function() {
+				index = top.layer.msg('提交数据，请稍候',{icon: 16,time:false,shade:0.8});
+			},
+			success : function(ret) {
+				 setTimeout(function(){
+		            top.layer.close(index);
+					top.layer.msg("数据添加成功！");   
+		 			layer.closeAll("iframe");
+			 		//刷新父页面
+			 		parent.location.reload();
+				 },1000);   
+			} 
+		});
+ 		return false;
+ 	});
+});

@@ -1,0 +1,211 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html,body{
+    font-family: '微软雅黑', '楷体','Microsoft YaHei';
+    line-height:22px;
+    font-size:12px;
+    color:#606060;
+    margin: auto;
+}
+/*所有更多按钮的样式开始*/
+.more{
+    float: right;
+    margin-right: 10px;
+}
+.more a{
+    text-decoration: none;
+    color: #606060;
+}
+.more a:hover{
+    text-decoration: underline;
+}
+table tbody tr a:hover{
+    color: indianred;
+    text-decoration: underline;
+    cursor: pointer;
+}
+/*所有更多按钮的样式结束*/
+.all_contents{
+    min-width: 1200px;
+}
+.home_page_all_contents{
+    padding-top: 10px;
+    width: 1200px;
+    margin: auto;
+}
+/*主体顶部轮播图开始*/
+#swiper-container0{
+    height: 258px;
+    overflow: hidden;
+}
+.slides_show_top{
+    display: inline-block;
+    width: 400px;
+    height: 252px;
+}
+.slides_show_top ,.slides_show_top.swiper-wrapper,.slides_show_top.swiper-slide{
+     width: 400px;
+     height: 252px;
+}
+.slides_show_top .swiper-slide img{
+    width: 400px;
+    height: 252px;
+}
+/*自定义pagination*/
+
+#swiper-container0 li{
+    display: inline-block;
+    float: left;
+    width: 25px;
+    height:20px;
+    font-size: 12px;
+    line-height: 20px;
+    background-color: rgba(252,230,201,0.8);
+    color: white;
+    margin-left: 3px;
+    margin-right: 3px;
+    cursor: pointer;
+}
+#swiper-container0 .swiper-pagination-bullet{
+    background-color: rgba(0,0,0,0.8);
+}
+
+#swiper-container0 .swiper-pagination-bullet-active{
+    background-color: rgba(255,128,0,0.8);
+}
+/*主体顶部轮播图结束*/
+/*主体顶部table表开始*/
+.table_top,.table_top_1,.table_top_2{
+    display: inline-block;
+    float: right;
+}
+.table_top table{
+    /*合并边框*/
+    border-collapse: collapse;
+    /*列宽由表格宽度和列宽度设定*/
+    table-layout: fixed;
+    width:380px;
+    height: 246px;
+    border: 0;
+    margin-left: 12px;
+}
+.table_top table thead,.table_top table thead tr,.table_top table thead td{
+    height: 43px;
+    width: 380px;
+    line-height: 43px;
+}
+
+.table_top table tbody tr,.table_top table tbody td{
+    display: table-row;
+    height: 32px;
+    width: 380px;
+    line-height: 32px;
+}
+.table_top table tbody td{
+    border-bottom: dashed 1px rgba(232,232,232,1);
+}
+.table_top table tbody tr td img{
+    width: 12px;
+    margin-left: 9px;
+    margin-right: 9px;
+}
+.table_top table tbody tr td span{
+    display: inline-block;
+    width: 80px;
+}
+.table_top table tbody tr td a{
+    display: inline-block;
+    width: 260px;
+    padding-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.table_top table tbody tr td a,.table_top table tbody tr td span,.table_top table tbody tr td img{
+    vertical-align: middle;
+}
+/*主体顶部table表结束*/
+.img_1200{
+    height: 100px;
+    width: 1200px;
+    margin: 10px 0 10px 0;
+}
+
+/*主体中间table表开始*/
+.table_up_1,.table_up_2{
+    display: inline-block;
+    width: 580px;
+    height: 248px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.table_4 table{
+    /*合并边框*/
+    border-collapse: collapse;
+    /*列宽由表格宽度和列宽度设定*/
+    table-layout: fixed;
+    width:580px;
+    height: 52px;
+    border: 0;
+    margin: 0 5px;
+}
+.table_4 table thead,.table_4 table thead tr,.table_4 table thead td{
+    height: 43px;
+    width: 570px;
+    line-height: 43px;
+}
+.title_bg {
+    background: url(../images_pc/list_title_bg.jpg) no-repeat;
+    height: 43px;
+    line-height: 43px;
+    color: #fff;
+    font-size: 14px;
+    text-align: left;
+    padding-left: 10px;
+}
+.table_4 table tbody tr,.table_4 table tbody td{
+    display: table-row;
+    height: 32px;
+    width: 570px;
+    line-height: 32px;
+}
+.table_4 table tbody td{
+    border-bottom: dashed 1px rgba(232,232,232,1);
+}
+.table_4 table tbody tr td img{
+    width: 12px;
+    margin-left: 9px;
+    margin-right: 9px;
+}
+.table_4 table tbody tr td span{
+    display: inline-block;
+    width: 80px;
+}
+.table_4 table tbody tr td a{
+    display: inline-block;
+    width: 450px;
+    padding-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.table_4 table tbody tr td a,.table_4 table tbody tr td span,.table_4 table tbody tr td img{
+    vertical-align: middle;
+}
+/*主体中间table表结束*/
+/*底部轮播图样式开始*/
+.slides_show_footer{
+    width: 1200px;
+}
+.swiper-container1{
+    width: 1200px;
+    overflow: hidden;
+}
+.slides_show_footer .swiper-slide img{
+    width: 200px;
+    height: 150px;
+}
+/*底部轮播图样式结束*/
+

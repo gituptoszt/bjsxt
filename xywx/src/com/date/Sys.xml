@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.SysMapper">
+    <select id="selectAll"  parameterType="com.entity.Sys" resultType="com.entity.Sys">
+       SELECT * FROM sys
+       <trim prefix=" WHERE " prefixOverrides="AND">
+         <if test="id != 0"> AND id = #{id} </if>
+         <if test="name != null"> AND name = #{name} </if>
+         <if test="value != null"> AND value = #{value} </if>
+         <if test="txt != null"> AND txt = #{txt} </if>
+         <if test="type != null"> AND type = #{type} </if>
+         <if test="url != null"> AND url = #{url} </if>
+         <if test="img != null"> AND img = #{img} </if>
+         <if test="st != 0"> AND st = #{st} </if>
+         <if test="shen != 0"> AND shen = #{shen} </if>
+         <if test="bei_int != 0"> AND bei_int = #{bei_int} </if>
+         <if test="bei_1 != null"> AND bei_1 = #{bei_1} </if>
+         <if test="bei_2 != null"> AND bei_2 = #{bei_2} </if>
+         <if test="bei_3 != null"> AND bei_3 = #{bei_3} </if>
+        </trim>
+        ORDER BY id DESC 
+        <if test="number != 0 "> 
+          LIMIT #{start},#{number}
+        </if>
+     </select>
+    <!-- 添加 -->
+    <insert id="insert" parameterType="com.entity.Sys">
+        INSERT INTO sys(id 
+        <trim prefix="   ">
+            <if test="name != null"> ,  name</if>
+            <if test="value != null"> ,  value</if>
+            <if test="txt != null"> ,  txt</if>
+            <if test="type != null"> ,  type</if>
+            <if test="url != null"> ,  url</if>
+            <if test="img != null"> ,  img</if>
+            <if test="st != 0"> ,  st</if>
+            <if test="shen != 0"> ,  shen</if>
+            <if test="bei_int != 0"> ,  bei_int</if>
+            <if test="bei_1 != null"> ,  bei_1</if>
+            <if test="bei_2 != null"> ,  bei_2</if>
+            <if test="bei_3 != null"> ,  bei_3</if>
+        </trim>
+     )
+        VALUES(default 
+        <trim prefix="   "> 
+            <if test="name != null"> ,  #{name}</if>
+            <if test="value != null"> ,  #{value}</if>
+            <if test="txt != null"> ,  #{txt}</if>
+            <if test="type != null"> ,  #{type}</if>
+            <if test="url != null"> ,  #{url}</if>
+            <if test="img != null"> ,  #{img}</if>
+            <if test="st != 0"> ,  #{st}</if>
+            <if test="shen != 0"> ,  #{shen}</if>
+            <if test="bei_int != 0"> ,  #{bei_int}</if>
+            <if test="bei_1 != null"> ,  #{bei_1}</if>
+            <if test="bei_2 != null"> ,  #{bei_2}</if>
+            <if test="bei_3 != null"> ,  #{bei_3}</if>
+        </trim>
+        )
+        <selectKey resultType="Integer" keyProperty="id">
+             SELECT @@IDENTITY AS ID
+        </selectKey>
+    </insert>
+    <!-- 修改 -->
+    <update id="update" parameterType="com.entity.Sys">
+        UPDATE sys  
+        <trim prefix=" SET  " prefixOverrides=",">
+            <if test="name != null"> , name = #{name}</if>
+            <if test="value != null"> , value = #{value}</if>
+            <if test="txt != null"> , txt = #{txt}</if>
+            <if test="type != null"> , type = #{type}</if>
+            <if test="url != null"> , url = #{url}</if>
+            <if test="img != null"> , img = #{img}</if>
+            <if test="st != 0"> , st = #{st}</if>
+            <if test="shen != 0"> , shen = #{shen}</if>
+            <if test="bei_int != 0"> , bei_int = #{bei_int}</if>
+            <if test="bei_1 != null"> , bei_1 = #{bei_1}</if>
+            <if test="bei_2 != null"> , bei_2 = #{bei_2}</if>
+            <if test="bei_3 != null"> , bei_3 = #{bei_3}</if>
+        </trim>
+        <trim prefix=" WHERE  " prefixOverrides="">
+            <if test="id != 0"> id = #{id}</if>
+        </trim>
+    </update>
+    <!-- 删除 -->
+    <delete id="delete"  parameterType="com.entity.Sys"
+>        DELETE FROM sys 
+        <trim prefix=" WHERE " prefixOverrides="AND">
+            <if test="id != 0"> AND id = #{id}</if>
+            <if test="name != null"> AND name = #{name}</if>
+            <if test="value != null"> AND value = #{value}</if>
+            <if test="txt != null"> AND txt = #{txt}</if>
+            <if test="type != null"> AND type = #{type}</if>
+            <if test="url != null"> AND url = #{url}</if>
+            <if test="img != null"> AND img = #{img}</if>
+            <if test="st != 0"> AND st = #{st}</if>
+            <if test="shen != 0"> AND shen = #{shen}</if>
+            <if test="bei_int != 0"> AND bei_int = #{bei_int}</if>
+            <if test="bei_1 != null"> AND bei_1 = #{bei_1}</if>
+            <if test="bei_2 != null"> AND bei_2 = #{bei_2}</if>
+            <if test="bei_3 != null"> AND bei_3 = #{bei_3}</if>
+       </trim>
+    </delete>
+    <!-- 查数量 -->
+    <select id="selectCount"  parameterType="com.entity.Sys"  resultType="int">
+        SELECT COUNT(*) FROM sys
+        <trim prefix=" WHERE " prefixOverrides="AND">
+            <if test="id != 0"> AND id = #{id}</if>
+            <if test="name != null"> AND name = #{name}</if>
+            <if test="value != null"> AND value = #{value}</if>
+            <if test="txt != null"> AND txt = #{txt}</if>
+            <if test="type != null"> AND type = #{type}</if>
+            <if test="url != null"> AND url = #{url}</if>
+            <if test="img != null"> AND img = #{img}</if>
+            <if test="st != 0"> AND st = #{st}</if>
+            <if test="shen != 0"> AND shen = #{shen}</if>
+            <if test="bei_int != 0"> AND bei_int = #{bei_int}</if>
+            <if test="bei_1 != null"> AND bei_1 = #{bei_1}</if>
+            <if test="bei_2 != null"> AND bei_2 = #{bei_2}</if>
+            <if test="bei_3 != null"> AND bei_3 = #{bei_3}</if>
+        </trim>
+    </select>
+
+</mapper>
