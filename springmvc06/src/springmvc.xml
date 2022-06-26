@@ -21,11 +21,17 @@
 	<mvc:resources location="/images/" mapping="/images/**"></mvc:resources>
 	<mvc:resources location="/files/" mapping="/files/**"></mvc:resources>
 	<!-- 拦截器 -->
+	<!-- 这样写全部拦截 -->
+	<mvc:interceptors>
+			<bean class="com.bjsxt.interceptor.DemoInterceptor"></bean>
+	</mvc:interceptors>
+	<!-- 这样写指定url拦截 -->
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/demo"/>
 			<mvc:mapping path="/demo1"/>
 			<mvc:mapping path="/demo2"/>
+			<mvc:mapping path="/demo4"/>
 			<bean class="com.bjsxt.interceptor.DemoInterceptor"></bean>
 		</mvc:interceptor>
 	</mvc:interceptors>
