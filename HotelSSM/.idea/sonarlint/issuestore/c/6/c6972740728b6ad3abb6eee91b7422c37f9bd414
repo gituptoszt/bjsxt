@@ -1,0 +1,23 @@
+
+[
+java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(“š¼Z
+r
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(›õƒÀúÿÿÿÿ
+\
+java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ú­Ç†
+a
+java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÍêÜıÿÿÿÿ
+c
+java:S4488"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Ãèïûÿÿÿÿ
+m
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(¥“ŠÍ
+V
+java:S2441"=Make "Account" serializable or don't store it in the session.(ÜòÑÕÿÿÿÿÿ
+c
+java:S4488"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(‰¯Í¥úÿÿÿÿ
+m
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(¥“ŠÍ
+a
+java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ïşÒÊûÿÿÿÿ
+U
+java:S1126"AReplace this if-then-else statement by a single return statement.(¢¬›¬

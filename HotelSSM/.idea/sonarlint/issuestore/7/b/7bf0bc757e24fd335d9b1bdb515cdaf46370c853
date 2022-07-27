@@ -1,0 +1,12 @@
+
+PWeb:UnsupportedTagsInHtml5Check"&Remove this deprecated "font" element.(ƒÙÈO
+MWeb:TableWithoutCaptionCheck7" Add a description to this table.(²ßöäúÿÿÿÿ
+C	Web:S1827:")Remove this deprecated "width" attribute.(Éº«ûÿÿÿÿ
+l Web:TableHeaderHasIdOrScopeCheck:";Add either an 'id' or a 'scope' attribute to this <th> tag.(Éº«ûÿÿÿÿ
+l Web:TableHeaderHasIdOrScopeCheck;";Add either an 'id' or a 'scope' attribute to this <th> tag.(™í¥úÿÿÿÿ
+g Web:TableHeaderHasIdOrScopeCheck<";Add either an 'id' or a 'scope' attribute to this <th> tag.(Şüì©
+g Web:TableHeaderHasIdOrScopeCheck=";Add either an 'id' or a 'scope' attribute to this <th> tag.(í’ ñ
+g Web:TableHeaderHasIdOrScopeCheck>";Add either an 'id' or a 'scope' attribute to this <th> tag.(ºÔ±³
+g Web:TableHeaderHasIdOrScopeCheck?";Add either an 'id' or a 'scope' attribute to this <th> tag.(‡™÷õ
+g Web:TableHeaderHasIdOrScopeCheck@";Add either an 'id' or a 'scope' attribute to this <th> tag.(€ã½Â
+C	Web:S1827H")Remove this deprecated "align" attribute.(­³”Óıÿÿÿÿ
